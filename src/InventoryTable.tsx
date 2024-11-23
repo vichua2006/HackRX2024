@@ -1,17 +1,16 @@
-function InventoryTable() {
-  // Inventory of drugs
-  const drugs = [
-    ["Drug 1", 50, 10],
-    ["Drug 2", 100, 20],
-    ["Drug 3", 200, 40],
-  ];
+interface Props {
+  items: (string | number | boolean)[][];
+  heading: string;
+}
 
+function InventoryTable({ items, heading }: Props) {
   // Creates a table for drug inventory
   return (
     <>
-      <h1 className="h1 display-6 text-center">Drug Inventory</h1>
-      {drugs.length === 0 && <p>No Drugs Found</p>}
-      <table className="table">
+      <h1 className="h1 display-6 text-center">{heading}</h1>
+      <hr />
+      {items.length === 0 && <p>No items Found</p>}
+      <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -21,7 +20,7 @@ function InventoryTable() {
           </tr>
         </thead>
         <tbody>
-          {drugs.map((item, index) => (
+          {items.map((item, index) => (
             <tr key={index}>
               <th scope="row">{index + 1}</th>
               <td>{item[0]}</td>
