@@ -1,6 +1,7 @@
 import OrderForm from "./OrderForm";
 import InventoryTable from "./InventoryTable";
 import PrescriptionTable from "./PrescriptionTable";
+import PrescriptionCard from "./PrescriptionCard";
 
 import "./App.css";
 
@@ -13,10 +14,59 @@ function App() {
   ];
 
   return (
-    <div>
+    <div className="p-5">
       <InventoryTable items={drugs} heading="Drug Inventory"></InventoryTable>
       <PrescriptionTable heading="Current Prescriptions">
-        <div></div>
+        <div className="d-flex justify-content-evenly row">
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+          <PrescriptionCard
+            patientName="Timmy"
+            dob="01-01-2006"
+            address="150 McAllister St"
+            medication={["drug 1", "drug 2", "drug 3"]}
+          />
+        </div>
       </PrescriptionTable>
     </div>
   );
