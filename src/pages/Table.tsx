@@ -1,4 +1,4 @@
-import OrderForm from "../OrderForm";
+import OrderForm from "./OrderForm";
 import InventoryTable from "../InventoryTable";
 
 import "./Table.css";

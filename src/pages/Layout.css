@@ -1,0 +1,28 @@
+ul {
+    display: block;
+    list-style-type: none;
+    margin-bottom: 1vh;
+    width: 100%;
+    background-color: rgb(196, 196, 196);
+    align-content: end;
+    padding: 0;
+    margin-right: 5px;
+}
+
+li {
+    display: inline-block;
+    height: 100%;
+    float: right;
+    padding: 15px 15px;
+}
+
+.link {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    background-color: rgb(160, 160, 160);;
+}
