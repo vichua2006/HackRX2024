@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
 interface Props {
-  heading: string;
   children: ReactNode;
+  heading: string;
 }
 
-function PrescriptionTable({ heading, children }: Props) {
+function DrugInventory({ children, heading }: Props) {
   return (
     <>
       <h1 className="h1 text-center">{heading}</h1>
@@ -15,4 +15,4 @@ function PrescriptionTable({ heading, children }: Props) {
   );
 }
 
-export default PrescriptionTable;
+export default DrugInventory;
