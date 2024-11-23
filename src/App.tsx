@@ -1,5 +1,6 @@
 import OrderForm from "./OrderForm";
 import InventoryTable from "./InventoryTable";
+import PrescriptionTable from "./PrescriptionTable";
 
 import "./App.css";
 
@@ -14,6 +15,9 @@ function App() {
   return (
     <div>
       <InventoryTable items={drugs} heading="Drug Inventory"></InventoryTable>
+      <PrescriptionTable heading="Current Prescriptions">
+        <div></div>
+      </PrescriptionTable>
     </div>
   );
 }
