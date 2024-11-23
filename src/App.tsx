@@ -1,10 +1,14 @@
-import OrderForm from './OrderForm'
-import Message from './InventoryTable'
+import OrderForm from "./OrderForm";
+import InventoryTable from "./InventoryTable";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-  return <div><OrderForm></OrderForm></div>
+  return (
+    <div>
+      <InventoryTable></InventoryTable>
+    </div>
+  );
 }
 
-export default App
+export default App;
