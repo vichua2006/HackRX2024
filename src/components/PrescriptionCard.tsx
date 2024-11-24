@@ -22,7 +22,7 @@ function PrescriptionCard({
   return (
     <div
       className={"card p-2 m-3 " + bgColour}
-      style={{ width: "18rem" }}
+      style={{ width: "18rem" , transitionDuration: "0.2s"}}
       onMouseEnter={() => setSelected(true)}
       onMouseLeave={() => setSelected(false)}
     >
@@ -39,6 +39,7 @@ function PrescriptionCard({
               "list-group-item d-flex justify-content-between align-items-center border-light" +
               bgColour
             }
+            style={{transitionDuration: "0.2s"}}
           >
             {med[0]}
             <span className="badge text-bg-primary rounded-pill">{med[1]}</span>

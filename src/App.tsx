@@ -53,7 +53,7 @@ function App() {
               </>
             }
           />
-          <Route path="call" element={<OrderForm />} />
+          <Route path="call" element={<div className="p-5 bg-gradient"><OrderForm /></div>} />
         </Route>
       </Routes>
     </BrowserRouter>
