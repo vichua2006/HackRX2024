@@ -7,6 +7,7 @@ import DrugInventoryList from "./assets/DrugInventoryList";
 import PatientList from "./assets/PatientList";
 import Layout from "./components/layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Button from "./components/Button";
 
 import "./App.css";
 
@@ -22,6 +23,11 @@ function App() {
             element={
               <>
                 <div className="p-5 bg-gradient">
+                  <Button
+                    label="Refresh"
+                    color="primary"
+                    clickHandler={() => console.log("refresh")}
+                  ></Button>
                   <DrugInventory heading="Drug Inventory">
                     {DrugInventoryList.map((drug) => (
                       <DrugCard
@@ -32,6 +38,7 @@ function App() {
                         divider={drug.divider}
                         din={drug.din}
                         quantity={drug.quantity}
+                        standardQuantity={drug.standardQuantity}
                       />
                     ))}
                   </DrugInventory>
@@ -53,7 +60,14 @@ function App() {
               </>
             }
           />
-          <Route path="call" element={<OrderForm />} />
+          <Route
+            path="call"
+            element={
+              <div className="p-5 bg-gradient">
+                <OrderForm />
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -8,13 +8,14 @@ export function DrugCard({
   divider,
   din,
   quantity,
+  standardQuantity,
 }: Drug) {
   const [selected, setSelected] = useState(false);
   let bgColour = selected ? " bg-info text-dark" : "";
   return (
     <div
       className={"card p-2 m-2" + bgColour}
-      style={{ width: "17rem" }}
+      style={{ width: "18rem", transitionDuration: "0.2s" }}
       onMouseEnter={() => setSelected(true)}
       onMouseLeave={() => setSelected(false)}
     >
@@ -32,7 +33,7 @@ export function DrugCard({
         </div>
         <div className="container col d-flex align-items-end justify-content-end pb-2">
           <p className="card-text text-end ">
-            {quantity[0] + " " + quantity[1]}
+            {quantity + " " + standardQuantity[1]}
           </p>
         </div>
       </div>
