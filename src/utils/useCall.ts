@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import blendClient from "./BlandClient";
 import {ROHAN_PHONE_NUM } from "../data/phoneNums";
+import { defaultPrompt } from "../data/prompts";
 
 interface SendCallResponse {
   status: string;
@@ -15,9 +16,7 @@ interface CallDetailResponse {
   concatenated_transcript: string;
 }
 
-const defaultTaskPrompt =
-  "You are a smart pharmacy assistant. Your task is of the following:\n";
-
+const defaultTaskPrompt = defaultPrompt;
 
 function useCall(
   taskPrompt: string,

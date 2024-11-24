@@ -1,11 +1,17 @@
 import { useState } from "react";
+import ResultCard, { RequestResult } from "./ResultCard";
+import ResultCardContainer from "../ResultCardContainer";
+
+interface DrugRequest {
+  prescription: string,
+  quantity: number,
+  units: string,
+}
 
 function OrderForm() {
-  const [inputs, setInputs] = useState({
-    prescription: "",
-    quantity: 0,
-    units: "TAB",
-  });
+  const [currInput, setInputs] = useState<DrugRequest>({ prescription: "", quantity: 0, units: "TAB" });
+  const [allInputs, setAllInputs] = useState<RequestResult[]>([]);
+  console.log(allInputs);
   let ValidUnits = ["TAB", "CAP", "PACK", "mg", "ml", "mcg"];
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,13 +22,7 @@ function OrderForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert(
-      inputs.prescription +
-        "; Quantity: " +
-        inputs.quantity +
-        " " +
-        inputs.units
-    );
+    setAllInputs([...allInputs, {...currInput, isLoading: false, result: ""}])
   };
 
   const handleUnitSelection = (event: React.MouseEvent<HTMLLIElement>) => {
@@ -37,7 +37,7 @@ function OrderForm() {
       <form onSubmit={handleSubmit} className="p-5">
         <div className="mb-3">
           <label htmlFor="DrugName" className="form-label">
-            Drug ID:
+            Drug Identification Number (DIN):
           </label>
           <input
             type="text"
@@ -46,7 +46,6 @@ function OrderForm() {
             name="prescription"
             aria-describedby="DrugName"
             onChange={handleChange}
-            value={inputs.prescription}
           />
         </div>
         <label htmlFor="Quantity" className="form-label">
@@ -61,7 +60,6 @@ function OrderForm() {
             min="0"
             step="1"
             onChange={handleChange}
-            value={inputs.quantity}
           />
           <button
             className="btn btn-outline-secondary dropdown-toggle"
@@ -69,7 +67,7 @@ function OrderForm() {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {inputs.units}
+            {ValidUnits[0]}
           </button>
           <ul className="dropdown-menu dropdown-menu-end">
             {ValidUnits.map((unit) => (
@@ -88,6 +86,9 @@ function OrderForm() {
           Submit
         </button>
       </form>
+      <ResultCardContainer heading="Previous Requests">
+        {allInputs.map((request) => <ResultCard key={request.prescription} {...request}></ResultCard>)}
+      </ResultCardContainer>
     </div>
   );
 }
