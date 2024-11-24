@@ -14,7 +14,7 @@ export function DrugCard({
   return (
     <div
       className={"card p-2 m-2" + bgColour}
-      style={{ width: "17rem" }}
+      style={{ width: "17rem" , transitionDuration: "0.2s"}}
       onMouseEnter={() => setSelected(true)}
       onMouseLeave={() => setSelected(false)}
     >
