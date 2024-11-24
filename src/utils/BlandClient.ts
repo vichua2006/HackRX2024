@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AMELIA_KEY, ROHAN_KEY } from "../data/apiKeys";
+import {ROHAN_KEY } from "../data/apiKeys";
 
 // a general api client for both Send Call and Call Detail
 const blendClient = axios.create({
