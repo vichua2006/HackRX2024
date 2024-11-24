@@ -1,0 +1,4 @@
+
+export const DEFAULT_PHONE_NUM = "+15069985079";
+export const AMELIA_PHONE_NUM =  "+15063435687";
+export const ROHAN_PHONE_NUM =  "+15062822640";
