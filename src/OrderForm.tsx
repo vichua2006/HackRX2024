@@ -1,7 +1,16 @@
 import { useState } from "react";
+import ResultCard, { RequestResult } from "./ResultCard";
+import ResultCardContainer from "./ResultCardContainer";
+
+interface DrugRequest {
+  prescription: string,
+  quantity: number,
+}
 
 function OrderForm() {
-  const [inputs, setInputs] = useState({ prescription: "", quantity: 0 });
+  const [currInput, setInputs] = useState<DrugRequest>({ prescription: "", quantity: 0 });
+  const [allInputs, setAllInputs] = useState<RequestResult[]>([]);
+  console.log(allInputs);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -11,7 +20,7 @@ function OrderForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert(inputs.prescription + " " + inputs.quantity);
+    setAllInputs([...allInputs, {...currInput, isLoading: false, result: ""}])
   };
 
   return (
@@ -19,7 +28,7 @@ function OrderForm() {
       <form onSubmit={handleSubmit} className="p-5">
         <div className="mb-3">
           <label htmlFor="DrugName" className="form-label">
-            Drug ID:
+            Drug Identification Number (DIN):
           </label>
           <input
             type="text"
@@ -28,13 +37,12 @@ function OrderForm() {
             name="prescription"
             aria-describedby="DrugName"
             onChange={handleChange}
-            value={inputs.prescription}
           />
         </div>
 
         <div className="mb-3">
           <label htmlFor="Quantity" className="form-label">
-            Quantity:
+            Requested Quantity:
           </label>
           <input
             type="number"
@@ -44,13 +52,15 @@ function OrderForm() {
             min="0"
             step="1"
             onChange={handleChange}
-            value={inputs.quantity}
           />
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
+      <ResultCardContainer heading="Previous Requests">
+        {allInputs.map((request) => <ResultCard key={request.prescription} {...request}></ResultCard>)}
+      </ResultCardContainer>
     </div>
   );
 }

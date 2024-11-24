@@ -25,7 +25,7 @@ function App() {
                   <DrugInventory heading="Drug Inventory">
                     {DrugInventoryList.map((drug) => (
                       <DrugCard
-                        key={drug.name}
+                        key={drug.din}
                         brand={drug.brand}
                         name={drug.name}
                         dosage={drug.dosage}

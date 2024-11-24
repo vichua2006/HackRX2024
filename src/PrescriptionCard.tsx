@@ -35,14 +35,14 @@ function PrescriptionCard({
       <ul className="list-group list-group-flush rounded-3">
         {medication.map((med) => (
           <li
+            key={med}
             className={
               "list-group-item text-light d-flex justify-content-between align-items-center border-light" +
               bgColour
             }
-            style={{ "--bs-border-opacity": "0.3" }}
           >
             {med}
-            <span class="badge text-bg-primary rounded-pill">14</span>
+            <span className="badge text-bg-primary rounded-pill">14</span>
           </li>
         ))}
       </ul>
