@@ -135,7 +135,7 @@ const DrugInventoryList: Drug[] = [
     standardQuantity: 10,
   },
   {
-    brand: "Snythroid",
+    brand: "Sythroid",
     name: "",
     dosage: [[175, "mcg"]],
     divider: "/",

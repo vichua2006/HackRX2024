@@ -18,7 +18,7 @@ const PatientList: Patient[] = [
     dob: "2006/02/21",
     sex: "Female",
     activeRx: "8910111",
-    medication: [["Snythroid", 20]],
+    medication: [["Sythroid", 20]],
     due: "5 hrs ago",
   },
   {
@@ -42,7 +42,7 @@ const PatientList: Patient[] = [
     activeRx: "1617181",
     medication: [
       ["Crestor Rosuvastatin", 420],
-      ["Snythroid", 69],
+      ["Sythroid", 69],
     ],
     due: "1 day",
   },

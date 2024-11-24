@@ -32,6 +32,7 @@ function App() {
                         divider={drug.divider}
                         din={drug.din}
                         quantity={drug.quantity}
+                        standardQuantity={drug.standardQuantity}
                       />
                     ))}
                   </DrugInventory>
