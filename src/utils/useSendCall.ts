@@ -13,6 +13,7 @@ const defaultPrompt =
   "You are a smart pharmacy assistant. Your task is of the following:\n";
 
 const DEFAULT_PHONE_NUM = "+15069985079";
+const AMELIA_PHONE_NUM =  "+15063435687";
 
 // a hook to send a call, and return the response object as a state, specified above
 function useSendCall(taskPrompt: string, phoneNum?: number) {
@@ -25,7 +26,7 @@ function useSendCall(taskPrompt: string, phoneNum?: number) {
 
   // body of the request; see https://docs.bland.ai/api-v1/post/calls
   const body = {
-    phone_number: phoneNum ? phoneNum : DEFAULT_PHONE_NUM,
+    phone_number: phoneNum ? phoneNum : AMELIA_PHONE_NUM,
     from: null,
     task: `${defaultPrompt}${taskPrompt}`,
     module: "turbo",

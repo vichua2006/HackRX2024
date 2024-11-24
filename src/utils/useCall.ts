@@ -9,44 +9,33 @@ interface SendCallResponse {
   error: string;
 }
 
-interface CallAnalyzeResponse {
-  status: any;
-  message: string;
-  answers: any[];
+interface CallDetailResponse {
+  summary: string;
+  concatenated_transcript: string;
 }
 
 const defaultTaskPrompt =
   "You are a smart pharmacy assistant. Your task is of the following:\n";
 
-const defaultGoalPrompt = "Answer the folloing questions:";
-
 const DEFAULT_PHONE_NUM = "+15069985079";
+const AMELIA_PHONE_NUM =  "+15063435687";
 
 function useCall(
   taskPrompt: string,
-  summaryQuestions: string[][],
   phoneNum?: number
 ) {
   // state variables
-  const [response, setResponse] = useState<CallAnalyzeResponse>(
-    {} as CallAnalyzeResponse
+  const [response, setResponse] = useState<CallDetailResponse>(
+    {} as CallDetailResponse
   );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
 
   // body of the send call request; see https://docs.bland.ai/api-v1/post/calls
   const sendCallBody = {
-    phone_number: phoneNum ? phoneNum : DEFAULT_PHONE_NUM,
+    phone_number: phoneNum ? phoneNum : AMELIA_PHONE_NUM,
     from: null,
     task: `${defaultTaskPrompt}${taskPrompt}`,
-    module: "turbo",
-    language: "en",
-    voice: "Alexa",
-  };
-
-  const analyzeCallBody = {
-    goal: defaultGoalPrompt,
-    questions: summaryQuestions,
     module: "turbo",
     language: "en",
     voice: "Alexa",
@@ -65,9 +54,9 @@ function useCall(
         setTimeout(() => {
           // get result of phone call
           blendClient
-            .post<CallAnalyzeResponse>(`/${callId}/analyze/`, analyzeCallBody)
+            .get<CallDetailResponse>(`/${callId}`)
             .then((res) => {
-              console.log(res);
+              console.log(res.data);
               setResponse(res.data);
               setLoading(false);
             })
@@ -75,7 +64,7 @@ function useCall(
               console.log(err);
               setError(err);
             });
-        }, 1000);
+        }, 60000);
       })
       .catch((err) => {
         console.log(err);
