@@ -23,7 +23,11 @@ function App() {
             element={
               <>
                 <div className="p-5 bg-gradient">
-                  <Button></Button>
+                  <Button
+                    label="Refresh"
+                    color="primary"
+                    clickHandler={() => console.log("refresh")}
+                  ></Button>
                   <DrugInventory heading="Drug Inventory">
                     {DrugInventoryList.map((drug) => (
                       <DrugCard
@@ -56,7 +60,14 @@ function App() {
               </>
             }
           />
-          <Route path="call" element={<div className="p-5 bg-gradient"><OrderForm /></div>} />
+          <Route
+            path="call"
+            element={
+              <div className="p-5 bg-gradient">
+                <OrderForm />
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
