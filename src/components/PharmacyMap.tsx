@@ -3,11 +3,11 @@ import {APIProvider, Map, Marker} from '@vis.gl/react-google-maps';
 
 function PharmacyMap () {
     return (
-        <div className={"border-4 rounded-4"} style={{width: '60vw', marginLeft: "auto", marginRight: "auto", overflow: "hidden"}}>
+        <div className={"border rounded-4"} style={{width: '60vw', marginLeft: "auto", marginRight: "auto", overflow: "hidden"}}>
         <APIProvider apiKey={"AIzaSyAguTSvwNrK--S67kME0vjGCETsh251diw"}>
                 
                 <Map
-                style={{width: '60vw', height: '40vh'}}
+                style={{width: '60vw', height: '60vh'}}
                 zoom={12.5}
                 gestureHandling={'greedy'}
                 disableDefaultUI={true}
