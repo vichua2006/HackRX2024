@@ -1,5 +1,4 @@
 import OrderForm from "./OrderForm";
-import InventoryTable from "./InventoryTable";
 import PrescriptionTable from "./PrescriptionTable";
 import PrescriptionCard from "./PrescriptionCard";
 import DrugInventory from "./DrugInventory";
