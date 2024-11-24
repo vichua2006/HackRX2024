@@ -1,7 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
 import ThemeSwitch from "./ThemeSwitch";
+import { useState } from "react";
 
 const Layout = () => {
+  const [activeLink, setActiveLink] = useState("home");
   return (
     <>
       <nav className="navbar  navbar-expand-lg">
@@ -13,18 +15,24 @@ const Layout = () => {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link
-                  className={"link nav-link active"}
+                  className={
+                    "link nav-link " + (activeLink === "home" ? "active" : "")
+                  }
                   to="/"
                   aria-current="page"
+                  onClick={() => setActiveLink("home")}
                 >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className={"link nav-link"}
+                  className={
+                    "link nav-link " + (activeLink === "call" ? "active" : "")
+                  }
                   to="/call"
                   aria-current="page"
+                  onClick={() => setActiveLink("call")}
                 >
                   Make Request
                 </Link>
