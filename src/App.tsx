@@ -11,14 +11,17 @@ import Layout from "./components/layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Button from "./components/Button";
 import PopUp from "./components/PopUp";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import { Toast } from "bootstrap";
 
 import "./App.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   // Inventory of drugs
   const [drugInventoryData, setDrugInventoryData] = useState(DrugInventoryList);
   const [patientData, setPatientData] = useState(PatientList);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -27,7 +30,20 @@ function App() {
             index
             element={
               <>
-                <PopUp></PopUp>
+                {drugInventoryData
+                  .filter((drug) => drug.quantity < drug.standardQuantity[0]) // Filter drugs with low inventory
+                  .map((drug) => (
+                    <PopUp
+                      key={drug.din}
+                      heading="Medication Low"
+                      Important={true}
+                    >
+                      <p>
+                        Drug: {`${drug.brand} ${drug.name} (DIN: ${drug.din})`}
+                      </p>
+                    </PopUp>
+                  ))}
+
                 <div className="p-5 bg-gradient">
                   <Button
                     label="Refresh"
@@ -43,6 +59,13 @@ function App() {
                     clickHandler={() => {
                       setDrugInventoryData(DrugInventoryListDemo);
                       setPatientData(PatientListDemo);
+                      const toastLiveExample =
+                        document.getElementById("liveToast");
+                      if (toastLiveExample) {
+                        const toastBootstrap =
+                          Toast.getOrCreateInstance(toastLiveExample);
+                        toastBootstrap.show();
+                      }
                     }}
                   ></Button>
                   <DrugInventory heading="Drug Inventory">
