@@ -105,7 +105,10 @@ const DrugInventoryList: Drug[] = [
   {
     brand: "Shingrix",
     name: "",
-    dosage: [[50, "mcg"], [(0.5, "mL")]],
+    dosage: [
+      [50, "mcg"],
+      [0.5, "mL"],
+    ],
     divider: "/",
     din: "02468425​",
     quantity: [4, "PACK"],

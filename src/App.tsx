@@ -13,7 +13,7 @@ function App() {
   // Inventory of drugs
 
   return (
-    <div className="p-5">
+    <div className="p-5 bg-black bg-gradient text-light">
       <DrugInventory heading="Drug Inventory">
         {DrugInventoryList.map((drug) => (
           <DrugCard
@@ -26,6 +26,7 @@ function App() {
           />
         ))}
       </DrugInventory>
+      <div className="mb-5 mt-5 pb-5"></div>
       <PrescriptionTable heading="Current Prescriptions">
         {PatientList.map((patient) => (
           <PrescriptionCard
