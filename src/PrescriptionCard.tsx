@@ -18,7 +18,7 @@ function PrescriptionCard({
   due,
 }: Patient) {
   const [selected, setSelected] = useState(false);
-  let bgColour = selected ? " bg-success" : " bg-dark";
+  let bgColour = selected ? " bg-success" : "";
   return (
     <div
       className={"card p-2 m-3 " + bgColour}
@@ -36,7 +36,7 @@ function PrescriptionCard({
         {medication.map((med) => (
           <li
             className={
-              "list-group-item text-light d-flex justify-content-between align-items-center border-light" +
+              "list-group-item d-flex justify-content-between align-items-center border-light" +
               bgColour
             }
             style={{ "--bs-border-opacity": "0.3" }}

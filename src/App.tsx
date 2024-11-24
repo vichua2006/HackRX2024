@@ -22,7 +22,7 @@ function App() {
             index
             element={
               <>
-                <div className="p-5 bg-black bg-gradient text-light">
+                <div className="p-5 bg-gradient">
                   <DrugInventory heading="Drug Inventory">
                     {DrugInventoryList.map((drug) => (
                       <DrugCard

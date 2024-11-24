@@ -18,7 +18,7 @@ export function DrugCard({
   quantity,
 }: Drug) {
   const [selected, setSelected] = useState(false);
-  let bgColour = selected ? " bg-success" : " bg-dark";
+  let bgColour = selected ? " bg-success" : "";
   return (
     <div
       className={"card p-2 m-2" + bgColour}

@@ -1,9 +1,10 @@
 import { Outlet, Link } from "react-router-dom";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Layout = () => {
   return (
     <>
-      <nav className="navbar bg-dark text- navbar-expand-lg">
+      <nav className="navbar  navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand " href="#">
             RxSync
@@ -31,6 +32,7 @@ const Layout = () => {
             </ul>
           </div>
         </div>
+        <ThemeSwitch />
       </nav>
       <Outlet />
     </>
