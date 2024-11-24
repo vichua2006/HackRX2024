@@ -1,13 +1,5 @@
 import { useState } from "react";
-
-export interface Drug {
-  brand: string;
-  name: string;
-  dosage: [number, string][];
-  divider: string;
-  din: string;
-  quantity: [number, string];
-}
+import { Drug } from "../assets/DrugInventoryList";
 
 export function DrugCard({
   brand,

@@ -1,11 +1,11 @@
-import OrderForm from "./OrderForm";
-import PrescriptionTable from "./PrescriptionTable";
-import PrescriptionCard from "./PrescriptionCard";
-import DrugInventory from "./DrugInventory";
-import { DrugCard } from "./DrugCard";
+import OrderForm from "./components/OrderForm";
+import PrescriptionTable from "./components/PrescriptionTable";
+import PrescriptionCard from "./components/PrescriptionCard";
+import DrugInventory from "./components/DrugInventory";
+import { DrugCard } from "./components/DrugCard";
 import DrugInventoryList from "./assets/DrugInventoryList";
 import PatientList from "./assets/PatientList";
-import Layout from "./layout";
+import Layout from "./components/layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";

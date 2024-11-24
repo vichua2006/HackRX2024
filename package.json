@@ -13,6 +13,7 @@
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
+    "js-marker-clusterer": "github:googlemaps/markerclusterer",
     "packages": "^0.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
