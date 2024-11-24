@@ -1,6 +1,7 @@
 import './App.css'
 import blendClient from './utils/BlandClient';
 import useCall from './utils/useCall';
+import useGPT from './utils/useGPT';
 import useSendCall from './utils/useSendCall';
 
 function App() {
@@ -16,9 +17,8 @@ function App() {
     voice: "Alexa",
   };
 
-  const analyzeCallBody = {
-
-  }
+  const message = useGPT("in short text, what is the trolly problem");
+  console.log(message);
 
 }
 
