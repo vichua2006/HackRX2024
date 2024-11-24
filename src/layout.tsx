@@ -5,7 +5,7 @@ const Layout = () => {
     <>
       <nav className="navbar bg-dark text- navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand " href="#">
             RxSync
           </a>
           <div className="collapse navbar-collapse" id="navbarNav">
