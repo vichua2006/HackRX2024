@@ -1,5 +1,9 @@
+// obsolete, use useCall.ts instead
+
+import { AMELIA_PHONE_NUM } from "../data/phoneNums";
 import { useEffect, useState } from "react";
-import blendClient from "./BlendClient";
+import blendClient from "./BlandClient";
+import { defaultPrompt } from "../data/prompts";
 
 interface SendCallResponse {
   status: string;
@@ -8,12 +12,6 @@ interface SendCallResponse {
   message: string;
   error: string;
 }
-
-const defaultPrompt =
-  "You are a smart pharmacy assistant. Your task is of the following:\n";
-
-const DEFAULT_PHONE_NUM = "+15069985079";
-const AMELIA_PHONE_NUM =  "+15063435687";
 
 // a hook to send a call, and return the response object as a state, specified above
 function useSendCall(taskPrompt: string, phoneNum?: number) {

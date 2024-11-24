@@ -1,5 +1,6 @@
+// use useCall instead
 import { useState, useEffect } from "react";
-import blendClient from "./BlendClient";
+import blendClient from "./BlandClient";
 
 interface CallAnalyzeResponse {
     status: any;

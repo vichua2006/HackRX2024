@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import blendClient from "./BlendClient";
+import blendClient from "./BlandClient";
+import { AMELIA_PHONE_NUM, ROHAN_PHONE_NUM } from "../data/phoneNums";
 
 interface SendCallResponse {
   status: string;
@@ -17,8 +18,6 @@ interface CallDetailResponse {
 const defaultTaskPrompt =
   "You are a smart pharmacy assistant. Your task is of the following:\n";
 
-const DEFAULT_PHONE_NUM = "+15069985079";
-const AMELIA_PHONE_NUM =  "+15063435687";
 
 function useCall(
   taskPrompt: string,
@@ -33,7 +32,7 @@ function useCall(
 
   // body of the send call request; see https://docs.bland.ai/api-v1/post/calls
   const sendCallBody = {
-    phone_number: phoneNum ? phoneNum : AMELIA_PHONE_NUM,
+    phone_number: phoneNum ? phoneNum : ROHAN_PHONE_NUM,
     from: null,
     task: `${defaultTaskPrompt}${taskPrompt}`,
     module: "turbo",

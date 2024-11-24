@@ -1,5 +1,5 @@
 import './App.css'
-import blendClient from './utils/BlendClient';
+import blendClient from './utils/BlandClient';
 import useCall from './utils/useCall';
 import useSendCall from './utils/useSendCall';
 
