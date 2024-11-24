@@ -1,5 +1,5 @@
 :root {
-  --light: #d8c21e;
+  --light: #fff;
   --dark: #111111;
   --ball: 20px;
   --top: 8px;
@@ -18,10 +18,11 @@
 .toggle {
   display: block;
   position: relative;
-  width: 80px;
+  width: 90px;
   height: 40px;
   cursor: pointer;
   transition: all 0.7s ease-out;
+  margin-right: 20px;
 }
 
 .slider {
