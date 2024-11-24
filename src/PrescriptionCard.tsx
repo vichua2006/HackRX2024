@@ -5,7 +5,7 @@ export interface Patient {
   dob: string;
   sex: string;
   activeRx: string;
-  medication: string[];
+  medication: [string, number][];
   due: string;
 }
 
@@ -18,7 +18,7 @@ function PrescriptionCard({
   due,
 }: Patient) {
   const [selected, setSelected] = useState(false);
-  let bgColour = selected ? " bg-success" : "";
+  let bgColour = selected ? " bg-info text-dark" : "";
   return (
     <div
       className={"card p-2 m-3 " + bgColour}
@@ -28,8 +28,8 @@ function PrescriptionCard({
     >
       <h5 className="card-title text-center align-middle m-0">{patientName}</h5>
       <hr />
-      <p className="card-subtitle mb-1 text-body-secondary">{"DOB: " + dob}</p>
-      <p className="card-subtitle mb-1 text-body-secondary">{"Sex: " + sex}</p>
+      <p className="card-text mb-1">{"DOB: " + dob}</p>
+      <p className="card-text mb-1">{"Sex: " + sex}</p>
       <p className="card-text mb-1">{"Active Rx: " + activeRx}</p>
       <p className="card-text">{"Due: " + due}</p>
       <ul className="list-group list-group-flush rounded-3">
@@ -41,8 +41,8 @@ function PrescriptionCard({
             }
             style={{ "--bs-border-opacity": "0.3" }}
           >
-            {med}
-            <span class="badge text-bg-primary rounded-pill">14</span>
+            {med[0]}
+            <span className="badge text-bg-primary rounded-pill">{med[1]}</span>
           </li>
         ))}
       </ul>

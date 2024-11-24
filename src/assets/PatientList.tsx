@@ -6,7 +6,11 @@ const PatientList: Patient[] = [
     dob: "2006/10/01",
     sex: "Male",
     activeRx: "1234567",
-    medication: ["Meth", "Coke", "Fent"],
+    medication: [
+      ["Meth", 20],
+      ["Coke", 5],
+      ["Fent", 10],
+    ],
     due: "1 day ago",
   },
   {
@@ -14,7 +18,7 @@ const PatientList: Patient[] = [
     dob: "2006/02/21",
     sex: "Female",
     activeRx: "8910111",
-    medication: ["Meth", "Coke", "Fent"],
+    medication: [["Meth", 20]],
     due: "5 hrs ago",
   },
   {
@@ -22,7 +26,13 @@ const PatientList: Patient[] = [
     dob: "2006/10/22",
     sex: "Male",
     activeRx: "8008135",
-    medication: ["Meth", "Coke", "Fent"],
+    medication: [
+      ["Meth", 20],
+      ["Coke", 9],
+      ["Fent", 16],
+      ["Fent", 35],
+      ["Meth", 20],
+    ],
     due: "3h",
   },
   {
@@ -30,7 +40,10 @@ const PatientList: Patient[] = [
     dob: "2006/09/15",
     sex: "Male",
     activeRx: "1617181",
-    medication: ["Meth", "Coke", "Fent"],
+    medication: [
+      ["Meth", 420],
+      ["Coke", 69],
+    ],
     due: "1 day",
   },
 ];
