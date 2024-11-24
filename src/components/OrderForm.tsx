@@ -23,13 +23,6 @@ function OrderForm() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setAllInputs([...allInputs, {...currInput, isLoading: false, result: ""}])
-    alert(
-      currInput.prescription +
-        "; Quantity: " +
-        currInput.quantity +
-        " " +
-        currInput.units
-    );
   };
 
   const handleUnitSelection = (event: React.MouseEvent<HTMLLIElement>) => {

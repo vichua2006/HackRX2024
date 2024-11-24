@@ -4,6 +4,7 @@ import { useState } from "react";
 export interface RequestResult {
   prescription: string,
   quantity: number,
+  units: string,
   isLoading: boolean,
   result: string;
 }
@@ -11,6 +12,7 @@ export interface RequestResult {
 function ResultCard({
     prescription,
     quantity,
+    units,
     isLoading,
     result
 }: RequestResult) {
@@ -28,10 +30,10 @@ function ResultCard({
       <div className="container row">
         <div className="container col-7">
           <h6 className="card-subtitle mb-2 text-body-secondary">
-            Requested Drug:
+            {"DIN " + prescription}
           </h6>
           <h6 className="card-subtitle mb-2 text-body-secondary">
-            {"DIN " + prescription}
+            {"Units: " + units}
           </h6>
         </div>
         <div className="container col d-flex align-items-end justify-content-end pb-2">
