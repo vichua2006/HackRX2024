@@ -49,7 +49,6 @@ function OrderForm() {
             value={inputs.prescription}
           />
         </div>
-
         <label htmlFor="Quantity" className="form-label">
           Quantity:
         </label>

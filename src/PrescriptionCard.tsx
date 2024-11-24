@@ -39,7 +39,6 @@ function PrescriptionCard({
               "list-group-item d-flex justify-content-between align-items-center border-light" +
               bgColour
             }
-            style={{ "--bs-border-opacity": "0.3" }}
           >
             {med[0]}
             <span className="badge text-bg-primary rounded-pill">{med[1]}</span>
