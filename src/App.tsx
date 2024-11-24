@@ -26,6 +26,7 @@ function App() {
                   <DrugInventory heading="Drug Inventory">
                     {DrugInventoryList.map((drug) => (
                       <DrugCard
+                        key={drug.name}
                         brand={drug.brand}
                         name={drug.name}
                         dosage={drug.dosage}
@@ -39,6 +40,7 @@ function App() {
                   <PrescriptionTable heading="Current Prescriptions">
                     {PatientList.map((patient) => (
                       <PrescriptionCard
+                        key={patient.activeRx}
                         patientName={patient.patientName}
                         dob={patient.dob}
                         sex={patient.sex}
