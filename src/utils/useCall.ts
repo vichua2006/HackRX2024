@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import blendClient from "./BlandClient";
-import { AMELIA_PHONE_NUM, ROHAN_PHONE_NUM } from "../data/phoneNums";
+import {ROHAN_PHONE_NUM } from "../data/phoneNums";
 
 interface SendCallResponse {
   status: string;
